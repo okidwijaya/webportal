@@ -31,11 +31,11 @@ SECRET_KEY = 'django-insecure-z1rgur0($mnsi+m-v))c-od$-sbb*ivytxj%rlt*kqw#xsq*k8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'http://localhost:8000',
-    'http://localhost:3000',
-    'https://cloudsand.my.id'
-]
+ALLOWED_HOSTS = ['*']
+    # 'http://localhost:8000/',
+    # 'http://localhost:8000',
+    # 'http://localhost:3000',
+    # 'https://cloudsand.my.id'
 
 
 # Application definition

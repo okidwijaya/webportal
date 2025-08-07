@@ -10,5 +10,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('admin/', admin, name='admin'),
     path('queue/users/', queue_users, name='queue_users'),
-    path('api/queue/', include(router.urls)),
+    path('api/queue/', include(router.urls))
     ]

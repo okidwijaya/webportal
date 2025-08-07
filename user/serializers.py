@@ -18,12 +18,12 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
 
-class LoginSerializer(serializers.ModelSerializer):
+class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True)
 
     def validate(self, data):
-        user = authenticate(email=data['email']), password=data(['password'])
+        user = authenticate(email=data['email'], password=data['password'])
         if not user:
             raise AuthenticationFailed
         return User
