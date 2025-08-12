@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from rest_framework import viewsets
 from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.generics import RetrieveAPIView
 from .models import (
     UserProfile, ArticleCategories, Authors, Tags,
     ArticleLists, ArticleTags, ArticleImages
@@ -50,3 +51,7 @@ class ArticleImagesViewSet(viewsets.ModelViewSet):
 #     queryset = ArticleImages.objects.all()
 #     serializer_class = ArticleImagesSerializer
 
+class ArticleDetailBySlugView(RetrieveAPIView):
+    queryset = ArticleLists.objects.all()
+    serializer_class = ArticleListsSerializer
+    lookup_field = 'slug'

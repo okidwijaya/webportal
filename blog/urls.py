@@ -13,5 +13,6 @@ router.register(r'article-images', views.ArticleImagesViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('articles-detail/<slug:slug>', views.ArticleDetailBySlugView.as_view(), name="article-detail-by-slug"),
     path('hello/', views.hello, name='hello'),
 ]
